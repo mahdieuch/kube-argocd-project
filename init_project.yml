@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: appTest
+  namespace: argocd
+spec:
+  destination:
+    namespace: app-mahdi
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: nginx_Deployment
+    repoURL: 'https://github.com/mahdieuch/kube-argocd-project.git'
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
+
