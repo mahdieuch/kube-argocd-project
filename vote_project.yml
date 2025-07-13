@@ -8,7 +8,7 @@ spec:
     namespace: app-vote
     server: 'https://kubernetes.default.svc'
   source:
-    path: voteapp
+    path: app-vote
     repoURL: 'https://github.com/mahdieuch/kube-argocd-project.git'
     targetRevision: HEAD
   project: default
