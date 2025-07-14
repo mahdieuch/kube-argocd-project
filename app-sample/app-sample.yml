@@ -41,24 +41,7 @@ spec:
   ports:
   - protocol: TCP
     port: 8080
-    targetPort: 3001  # Should match containerPort above
-  type: LoadBalancer  # For local development with Docker Desktop
----
-apiVersion: autoscaling/v2
-kind: HorizontalPodAutoscaler
-metadata:
-  name: my-webapp-hpa
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: my-webapp
-  minReplicas: 2
-  maxReplicas: 10
-  metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 70
+    targetPort: 3001
+    nodePort: 30085
+  type: NodePort # For local development with Docker Desktop
+
