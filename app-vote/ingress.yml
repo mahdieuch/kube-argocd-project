@@ -16,9 +16,6 @@ spec:
                 name: vote
                 port:
                   number: 8080
-    
-    - http:
-        paths:
           - path: /result
             pathType: Prefix
             backend:
