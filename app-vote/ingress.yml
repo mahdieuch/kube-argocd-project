@@ -7,20 +7,19 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: vote.local
-      http:
+    - http:
         paths:
-          - path: /
+          - path: /vote
             pathType: Prefix
             backend:
               service:
                 name: vote
                 port:
                   number: 8080
-    - host: result.local
-      http:
+    
+    - http:
         paths:
-          - path: /
+          - path: /result
             pathType: Prefix
             backend:
               service:
