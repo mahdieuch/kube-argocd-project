@@ -69,7 +69,7 @@ spec:
         averageUtilization: 50
   behavior:
     scaleDown:
-      stabilizationWindowSeconds: 300
+      stabilizationWindowSeconds: 8
       policies:
       - type: Percent
         value: 50
